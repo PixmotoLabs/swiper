@@ -90,6 +90,7 @@ export default function (index = 0, speed = this.params.speed, runCallbacks = tr
           swiper.$wrapperEl[0].removeEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
           swiper.$wrapperEl[0].removeEventListener('webkitTransitionEnd', swiper.onSlideToWrapperTransitionEnd);
           swiper.transitionEnd(runCallbacks, direction);
+          swiper.onSlideToWrapperTransitionEnd = undefined;
         };
       }
       swiper.$wrapperEl[0].addEventListener('transitionend', swiper.onSlideToWrapperTransitionEnd);
